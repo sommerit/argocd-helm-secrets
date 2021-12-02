@@ -13,5 +13,5 @@ script:
   - export PATH=$PATH:$HOME/.local/bin # put aws in the path
   - docker build -t agrocd-helm-secrets .
   - docker tag agrocd-helm-secrets:latest sommerit/argocd-helm-secrets:latest
-  - echo "$DOCKER_HUB_TOKEN" | docker login -u "$DOCKER_HUB_USER" --password-stdin
+  - echo "${{ secrets.DOCKER_HUB_TOKEN }}" | docker login -u "${{ secrets.DOCKER_HUB_USER }}" --password-stdin
   - docker push sommerit/argocd-helm-secrets:latest
