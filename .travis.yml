@@ -16,4 +16,4 @@ after_success:
   - export PATH=$PATH:$HOME/.local/bin # put aws in the path
   - docker build -t agrocd-helm-secrets .
   - docker tag agrocd-helm-secrets:latest sommerit/argocd-helm-secrets:latest
-  - docker push sommerit/argocd-helm-secrets:tagname
+  - docker push sommerit/argocd-helm-secrets:latest
